@@ -3,6 +3,7 @@ package com.example.hotelapp.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.hotelapp.R
 import com.example.hotelapp.adapter.RoomAdapter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -27,7 +28,30 @@ class MainActivity : AppCompatActivity() {
             val arrayAdapter = RoomAdapter(roomsArray)
             room_listView.adapter = arrayAdapter
         }
+
+        room_listView.setOnItemClickListener { parent, view, position, id ->
+            val roomChoice = roomsArray[position]
+
+            displayRoom(roomChoice)
+        }
     }
+
+
+    private fun displayRoom(roomChoice: String){
+
+        if (roomChoice == "Room A") {
+                room_image.setImageResource(R.drawable.room_0)
+            }
+
+            if (roomChoice == "Room B" ) {
+                room_image.setImageResource(R.drawable.room_1)
+            }
+
+            if (roomChoice == "Room C") {
+                room_image.setImageResource(R.drawable.room_2)
+            }
+    }
+
 }
 
 

@@ -6,19 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
+
+    <TextView
+        android:id="@+id/main_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Available Rooms"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:layout_margin="20dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
    <ListView
        android:id="@+id/room_listView"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/main_textView"
        />
 
     <ImageView
         android:id="@+id/room_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:src="@drawable/room_0"
         app:layout_constraintTop_toBottomOf="@id/room_listView"
         app:layout_constraintBottom_toTopOf="@id/goToCheckIn_button"
         app:layout_constraintStart_toStartOf="parent"

@@ -12,6 +12,7 @@
         android:textSize="24sp"
         android:textAlignment="center"
         android:textAllCaps="true"
+        android:textColor="@color/app_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

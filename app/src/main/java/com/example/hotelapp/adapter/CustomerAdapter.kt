@@ -3,6 +3,7 @@ package com.example.hotelapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotelapp.R
@@ -21,12 +22,15 @@ class CustomerAdapter(private val customerList: List<Customer>) : RecyclerView.A
     }
 
     override fun onBindViewHolder(holder: customerViewHolder, position: Int) {
+
         holder.apply {
-            customerName.text = customerList[position].customerName
-            roomTextView.text = customerList[position].roomNumber
-            priceTexView.text = customerList[position].roomPrice.toString()
-            dateTextView.text = customerList[position].date
+            val customer = customerList[position]
+            customerName.text = customer.customerName
+            roomTextView.text = customer.roomNumber
+            priceTexView.text = customer.roomPrice.toString()
+            dateTextView.text = customer.date
         }
+
     }
 
 
