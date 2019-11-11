@@ -53,6 +53,19 @@ class MyDatabase(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME,null
          val db = readableDatabase
         return db.rawQuery(query,null)
     }
-
+//
+//    fun deleteCustomer(customerName : String){
+//
+//        val query = "DELETE "
+//
+//        // Define 'where' part of query.
+//        val selection = "${.COLUMN_NAME} LIKE ?"
+//// Specify arguments in placeholder order.
+//        val selectionArgs = arrayOf("MyTitle")
+//// Issue SQL statement.
+//        val deletedRows = db.delete(FeedEntry.TABLE_NAME, selection, selectionArgs)
+//
+//    }
+//
 
 }

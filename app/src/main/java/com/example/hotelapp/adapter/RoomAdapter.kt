@@ -1,6 +1,7 @@
 package com.example.hotelapp.adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,11 +15,20 @@ class RoomAdapter(val roomArray: List<String>) : BaseAdapter(){
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
         val view = LayoutInflater.from(parent?.context).inflate(R.layout.room_item,parent,false)
-        view.findViewById<TextView>(R.id.room_textView).text = roomArray[position]
 
-//        view.setOnClickListener {
-//            Log.d("TAG","${roomArray[position]} has been selected")
-//            view.findViewById<ImageView>(R.id.room_image).setImageResource(R.drawable.room_0)
+        val roomItem = view.findViewById<TextView>(R.id.room_textView)
+        roomItem.text = roomArray[position]
+
+//        if(roomArray[position] == "Room A"){
+//            roomItem.setBackgroundColor(Color.parseColor("#51417C"))
+//        }
+
+//        if(roomArray[position] == "Room B"){
+//            roomItem.setBackgroundColor(250)
+//        }
+//
+//        if(roomArray[position] == "Room C"){
+//            roomItem.setBackgroundColor(265)
 //        }
 
 

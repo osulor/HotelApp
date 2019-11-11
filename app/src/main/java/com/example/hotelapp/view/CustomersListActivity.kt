@@ -2,7 +2,9 @@ package com.example.hotelapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.hotelapp.R
 import com.example.hotelapp.adapter.CustomerAdapter
 import com.example.hotelapp.database.MyDatabase
@@ -18,6 +20,7 @@ class CustomersListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_customers_list)
 
         readFromDatabase()
+
     }
 
     override fun onResume() {
@@ -41,6 +44,8 @@ class CustomersListActivity : AppCompatActivity() {
             )
             customerList.add(customer)
         }
+
+
         while (cursor.moveToNext()) {
             val customerName = cursor.getString(cursor.getColumnIndex(MyDatabase.COLUMN_NAME))
             val customerRoom =
@@ -50,7 +55,9 @@ class CustomersListActivity : AppCompatActivity() {
             val readCustomer = Customer(customerName, customerRoom, roomPrice.toDouble(),date)
             customerList.add(readCustomer)
         }
+
         displayCustomers()
+
     }
 
     private fun displayCustomers(){
@@ -58,6 +65,7 @@ class CustomersListActivity : AppCompatActivity() {
         val recyclerAdapter = CustomerAdapter(customerList)
         customers_listView.adapter = recyclerAdapter
         customers_listView.layoutManager = LinearLayoutManager(this)
+
     }
 
 }
